@@ -908,120 +908,120 @@
         100% { transform: translate(0) }
       }
 
-      /* ── PROJECTS (Kinetic Marquee Hover) ── */
+      /* ── PROJECTS (Design 1 - Giant Outline Accordion) ── */
       #projects {
         background: var(--bg);
-        padding: 120px 0 200px 0;
+        padding: 120px 0;
         position: relative;
         overflow: hidden;
       }
 
-      .marquee-row {
+      .d1-list {
+        display: flex;
+        flex-direction: column;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 40px;
+      }
+
+      .d1-item {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 40px 0;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .d1-item:first-child {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .d1-title-wrapper {
         display: flex;
         align-items: center;
-        padding: 60px 0;
+        justify-content: space-between;
         position: relative;
-        border-top: 1px solid rgba(255,255,255,0.05);
-        cursor: crosshair;
-        text-decoration: none;
-      }
-      .marquee-row:last-child {
-        border-bottom: 1px solid rgba(255,255,255,0.05);
+        z-index: 2;
       }
 
-      .marquee-text-wrapper {
-        display: flex;
-        white-space: nowrap;
-        position: relative;
-        z-index: 1;
-      }
-
-      .marquee-text {
+      .d1-num {
         font-family: 'Space Grotesk', sans-serif;
-        font-size: 5rem;
-        font-weight: 800;
-        color: rgba(255,255,255,0.08);
-        padding: 0 40px;
-        text-transform: uppercase;
+        font-size: 1.5rem;
+        color: rgba(255,255,255,0.3);
         transition: color 0.4s;
-        -webkit-text-stroke: 1px rgba(255,255,255,0.08);
       }
 
-      .marquee-row:hover .marquee-text {
+      .d1-title {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 6rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        color: transparent;
+        -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.3);
+        transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+        margin: 0;
+        line-height: 1;
+      }
+
+      .d1-item:hover .d1-title {
         color: #fff;
         -webkit-text-stroke: 0px transparent;
+        transform: translateX(20px);
       }
 
-      .marquee-layer {
-        display: flex;
-        will-change: transform;
-      }
-
-      .marquee-overlay {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%) scale(0.9);
-        opacity: 0;
-        background: rgba(0,0,0,0.8);
-        backdrop-filter: blur(10px);
-        padding: 40px;
-        border-radius: 20px;
-        border: 1px solid rgba(255,255,255,0.1);
-        width: 600px;
-        z-index: 10;
-        text-align: center;
-        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        pointer-events: none;
-      }
-
-      .marquee-row:hover .marquee-overlay {
-        opacity: 1;
-        transform: translate(-50%, -50%) scale(1);
-        pointer-events: auto;
-      }
-
-      .m-title {
-        font-size: 2.5rem;
+      .d1-item:hover .d1-num {
         color: var(--accent);
-        margin-bottom: 15px;
-        font-family: 'Space Grotesk', sans-serif;
-        font-weight: 700;
       }
 
-      .m-desc {
-        font-size: 1.1rem;
+      .d1-content {
+        max-height: 0;
+        opacity: 0;
+        transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+        padding-left: 10%;
+        padding-right: 10%;
+        overflow: hidden;
+      }
+
+      .d1-item:hover .d1-content {
+        max-height: 400px;
+        opacity: 1;
+        margin-top: 40px;
+      }
+
+      .d1-desc {
+        font-size: 1.2rem;
         color: #ccc;
         line-height: 1.6;
         margin-bottom: 20px;
       }
 
-      .m-tags {
+      .d1-tags {
         display: flex;
-        justify-content: center;
-        gap: 10px;
-      }
-
-      .m-tags span {
-        background: #111;
-        padding: 6px 12px;
-        border-radius: 4px;
-        font-size: 0.8rem;
-        border: 1px solid #333;
-      }
-
-      .m-links {
-        display: flex;
-        justify-content: center;
+        flex-wrap: wrap;
         gap: 15px;
-        margin-top: 25px;
+        margin-bottom: 25px;
       }
 
-      .m-btn {
+      .d1-tags span {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 0.9rem;
+        color: var(--accent);
+        background: rgba(0, 122, 255, 0.1);
+        padding: 6px 14px;
+        border-radius: 4px;
+        border: 1px solid rgba(0, 122, 255, 0.3);
+      }
+
+      .d1-links {
+        display: flex;
+        gap: 15px;
+      }
+
+      .d1-btn {
         display: inline-flex;
         align-items: center;
         gap: 8px;
-        padding: 10px 20px;
+        padding: 12px 24px;
         background: rgba(255, 255, 255, 0.05);
         border: 1px solid rgba(255, 255, 255, 0.1);
         color: #fff;
@@ -1033,11 +1033,21 @@
         transition: all 0.3s;
       }
 
-      .m-btn:hover {
+      .d1-btn:hover {
         background: var(--accent);
         border-color: var(--accent);
         color: #fff;
-        transform: translateY(-2px);
+        transform: translateY(-3px);
+      }
+
+      @media(max-width: 1024px) {
+        .d1-title { font-size: 4rem; }
+        .d1-content { padding-left: 5%; padding-right: 5%; }
+      }
+      @media(max-width: 768px) {
+        .d1-title { font-size: 2.5rem; -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3); }
+        .d1-content { padding-left: 0; padding-right: 0; }
+        .d1-item:hover .d1-title { transform: translateX(10px); }
       }
 
       .spotlight {
@@ -1677,65 +1687,59 @@
         <p class="sec-sub">Building solutions with high-scale logic and aesthetic precision.</p>
       </div>
 
-      <div class="projects-list">
-        <div class="marquee-row" data-dir="1">
-          <div class="marquee-text-wrapper">
-            <div class="marquee-layer">
-              <div class="marquee-text">UBER CLONE &mdash; UBER CLONE &mdash; UBER CLONE &mdash; UBER CLONE &mdash;&nbsp;</div>
-              <div class="marquee-text">UBER CLONE &mdash; UBER CLONE &mdash; UBER CLONE &mdash; UBER CLONE &mdash;&nbsp;</div>
-            </div>
+      <div class="d1-list">
+        <!-- Uber Clone -->
+        <div class="d1-item">
+          <div class="d1-title-wrapper">
+            <span class="d1-num">01</span>
+            <h3 class="d1-title">UBER CLONE</h3>
           </div>
-          <div class="marquee-overlay">
-            <h3 class="m-title">Uber Clone</h3>
-            <p class="m-desc">A robust MERN stack implementation of a high-performance ride-sharing ecosystem. Features real-time live tracking and scalable payment modules.</p>
-            <div class="m-tags">
+          <div class="d1-content">
+            <p class="d1-desc">A robust MERN stack implementation of a high-performance ride-sharing ecosystem. Features real-time live tracking and scalable payment modules.</p>
+            <div class="d1-tags">
               <span>React</span>
               <span>MongoDB</span>
               <span>Node.js</span>
               <span>Express.js</span>
               <span>Live Tracking</span>
             </div>
-            <div class="m-links">
-              <a href="https://github.com/Tanmoy200405/UberClone" target="_blank" class="m-btn">View Code</a>
+            <div class="d1-links">
+              <a href="https://github.com/Tanmoy200405/UberClone" target="_blank" class="d1-btn">View Code</a>
             </div>
           </div>
         </div>
 
-        <div class="marquee-row" data-dir="-1">
-          <div class="marquee-text-wrapper">
-            <div class="marquee-layer">
-              <div class="marquee-text">TROPICA &mdash; TROPICA &mdash; TROPICA &mdash; TROPICA &mdash; TROPICA &mdash;&nbsp;</div>
-              <div class="marquee-text">TROPICA &mdash; TROPICA &mdash; TROPICA &mdash; TROPICA &mdash; TROPICA &mdash;&nbsp;</div>
-            </div>
+        <!-- Tropica -->
+        <div class="d1-item">
+          <div class="d1-title-wrapper">
+            <span class="d1-num">02</span>
+            <h3 class="d1-title">TROPICA</h3>
           </div>
-          <div class="marquee-overlay">
-            <h3 class="m-title">TROPICA</h3>
-            <p class="m-desc">An ultra-premium cinematic nature portfolio showcasing complex GSAP scroll logic, custom cursors, and Awwwards-winning visual design paradigms.</p>
-            <div class="m-tags"><span>GSAP</span><span>WebGL</span><span>CSS3</span></div>
-            <div class="m-links">
-              <a href="https://tropical-xlg2.onrender.com/" target="_blank" class="m-btn">Live Preview</a>
+          <div class="d1-content">
+            <p class="d1-desc">An ultra-premium cinematic nature portfolio showcasing complex GSAP scroll logic, custom cursors, and Awwwards-winning visual design paradigms.</p>
+            <div class="d1-tags"><span>GSAP</span><span>WebGL</span><span>CSS3</span></div>
+            <div class="d1-links">
+              <a href="https://tropical-xlg2.onrender.com/" target="_blank" class="d1-btn">Live Preview</a>
             </div>
           </div>
         </div>
 
-        <div class="marquee-row" data-dir="1">
-          <div class="marquee-text-wrapper">
-            <div class="marquee-layer">
-              <div class="marquee-text">RAMYA CAREER GUIDANCE &mdash; RAMYA CAREER GUIDANCE &mdash; RAMYA CAREER GUIDANCE &mdash;&nbsp;</div>
-              <div class="marquee-text">RAMYA CAREER GUIDANCE &mdash; RAMYA CAREER GUIDANCE &mdash; RAMYA CAREER GUIDANCE &mdash;&nbsp;</div>
-            </div>
+        <!-- Ramya Career Guidance -->
+        <div class="d1-item">
+          <div class="d1-title-wrapper">
+            <span class="d1-num">03</span>
+            <h3 class="d1-title">RAMYA CAREER GUIDANCE</h3>
           </div>
-          <div class="marquee-overlay">
-            <h3 class="m-title">Ramya Career Guidance</h3>
-            <p class="m-desc">A sophisticated MERN stack platform for multi-tenant career consulting. Features complex data orchestration and automated student-partner matching logic.</p>
-            <div class="m-tags">
+          <div class="d1-content">
+            <p class="d1-desc">A sophisticated MERN stack platform for multi-tenant career consulting. Features complex data orchestration and automated student-partner matching logic.</p>
+            <div class="d1-tags">
               <span>MongoDB</span>
               <span>Express</span>
               <span>React</span>
               <span>Node.js</span>
             </div>
-            <div class="m-links">
-              <a href="https://ramya-carrer-guidance-rmee.onrender.com" target="_blank" class="m-btn">Live Preview</a>
+            <div class="d1-links">
+              <a href="https://ramya-carrer-guidance-rmee.onrender.com" target="_blank" class="d1-btn">Live Preview</a>
             </div>
           </div>
         </div>
@@ -2456,42 +2460,7 @@
         });
       }
 
-      // 2. Kinetic Marquee Infinite Scroll & Hover Pause
-      gsap.utils.toArray('.marquee-row').forEach((row, i) => {
-        const layer = row.querySelector('.marquee-layer');
-        const dir = parseInt(row.getAttribute('data-dir'));
-        
-        // Timeout to let fonts render before width calc
-        setTimeout(() => {
-          const textWidth = layer.children[0].offsetWidth;
-
-          const anim = gsap.to(layer, {
-            x: dir === 1 ? -textWidth : textWidth,
-            duration: 20,
-            ease: "none",
-            repeat: -1,
-            modifiers: {
-              x: gsap.utils.unitize(x => parseFloat(x) % textWidth)
-            }
-          });
-
-          if (dir === -1) {
-            gsap.set(layer, { x: -textWidth });
-          }
-
-          ScrollTrigger.create({
-            trigger: row,
-            start: "top bottom",
-            end: "bottom top",
-            onUpdate: (self) => {
-              gsap.to(anim, { timeScale: 1 + Math.abs(self.getVelocity() / 100), duration: 0.1 });
-            }
-          });
-
-          row.addEventListener('mouseenter', () => gsap.to(anim, { timeScale: 0.1, duration: 0.5 }));
-          row.addEventListener('mouseleave', () => gsap.to(anim, { timeScale: 1, duration: 0.5 }));
-        }, 100);
-      });
+      // (Marquee animation removed for Accordion layout)
 
       // ══════════════════════════════════════════════════
       //  TYPING ANIMATION
