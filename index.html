@@ -951,14 +951,15 @@
 
       .d1-title {
         font-family: 'Space Grotesk', sans-serif;
-        font-size: 6rem;
+        font-size: clamp(2rem, 8vw, 6rem);
         font-weight: 800;
         text-transform: uppercase;
         color: transparent;
         -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.3);
         transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
         margin: 0;
-        line-height: 1;
+        line-height: 1.1;
+        word-break: break-word;
       }
 
       .d1-item:hover .d1-title {
@@ -1039,13 +1040,15 @@
       }
 
       @media(max-width: 1024px) {
-        .d1-title { font-size: 4rem; }
         .d1-content { padding-left: 5%; padding-right: 5%; }
       }
       @media(max-width: 768px) {
-        .d1-title { font-size: 2.5rem; -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3); }
+        .d1-item { padding: 30px 0; }
+        .d1-title-wrapper { align-items: flex-start; gap: 15px; }
+        .d1-num { font-size: 1.2rem; margin-top: 5px; }
         .d1-content { padding-left: 0; padding-right: 0; }
         .d1-item:hover .d1-title { transform: translateX(10px); }
+        .d1-desc { font-size: 1rem; }
       }
 
       .spotlight {
@@ -1741,6 +1744,27 @@
             </div>
           </div>
         </div>
+
+        <!-- Easy Bazzar -->
+        <div class="d1-item">
+          <div class="d1-title-wrapper">
+            <span class="d1-num">04</span>
+            <h3 class="d1-title">EASY BAZZAR</h3>
+          </div>
+          <div class="d1-content">
+            <p class="d1-desc">A full-featured MERN stack e-commerce platform with a modern UI, robust state management, and seamless payment integration.</p>
+            <div class="d1-tags">
+              <span>MongoDB</span>
+              <span>Express</span>
+              <span>React</span>
+              <span>Node.js</span>
+              <span>E-commerce</span>
+            </div>
+            <div class="d1-links">
+              <a href="https://github.com/Tanmoy200405/EasyBazzar" target="_blank" class="d1-btn">View Code</a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -1936,7 +1960,7 @@
         </a>
 
         <a
-          href="https://www.instagram.com/tanmoymukherjee"
+          href="https://www.instagram.com/sugar_hugs_0505?igsh=MTAyb3M3ODhlYnhpZQ=="
           class="social-icon"
           target="_blank"
           aria-label="Instagram"
