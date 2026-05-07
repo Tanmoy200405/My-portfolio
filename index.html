@@ -937,7 +937,7 @@
       .d1-title-wrapper {
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        gap: clamp(20px, 5vw, 60px);
         position: relative;
         z-index: 2;
       }
@@ -947,6 +947,7 @@
         font-size: 1.5rem;
         color: rgba(255,255,255,0.3);
         transition: color 0.4s;
+        flex-shrink: 0;
       }
 
       .d1-title {
@@ -1055,11 +1056,12 @@
       }
       @media(max-width: 768px) {
         .d1-item { padding: 30px 0; }
-        .d1-title-wrapper { align-items: flex-start; gap: 15px; }
-        .d1-num { font-size: 1.2rem; margin-top: 5px; }
+        .d1-title-wrapper { align-items: flex-start; gap: 12px; }
+        .d1-num { font-size: 1.1rem; margin-top: 6px; }
+        .d1-title { font-size: clamp(1.4rem, 6.5vw, 2rem); }
         .d1-content { padding-left: 0; padding-right: 0; }
-        .d1-item:hover .d1-title { transform: translateX(10px); }
-        .d1-desc { font-size: 1rem; }
+        .d1-item:hover .d1-title { transform: translateX(8px); }
+        .d1-desc { font-size: 0.95rem; }
       }
 
       .spotlight {
