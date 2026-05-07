@@ -981,10 +981,21 @@
         overflow: hidden;
       }
 
-      .d1-item:hover .d1-content {
-        max-height: 400px;
+      .d1-item.active .d1-content {
+        max-height: 500px;
         opacity: 1;
         margin-top: 40px;
+        padding-bottom: 20px;
+      }
+
+      .d1-item.active .d1-title {
+        color: #fff;
+        -webkit-text-stroke: 0px transparent;
+        transform: translateX(15px);
+      }
+
+      .d1-item.active .d1-num {
+        color: var(--accent);
       }
 
       .d1-desc {
@@ -1732,12 +1743,12 @@
             <h3 class="d1-title">RAMYA CAREER GUIDANCE</h3>
           </div>
           <div class="d1-content">
-            <p class="d1-desc">A sophisticated MERN stack platform for multi-tenant career consulting. Features complex data orchestration and automated student-partner matching logic.</p>
+            <p class="d1-desc">An institutional-grade career guidance ecosystem architected with the MERN stack. Engineered for multi-tenant scalability, featuring advanced data orchestration and an automated logic engine for student-partner synchronization.</p>
             <div class="d1-tags">
-              <span>MongoDB</span>
-              <span>Express</span>
-              <span>React</span>
-              <span>Node.js</span>
+              <span>MERN Stack</span>
+              <span>Data Orchestration</span>
+              <span>Scalability</span>
+              <span>Multi-tenant</span>
             </div>
             <div class="d1-links">
               <a href="https://ramya-carrer-guidance-rmee.onrender.com" target="_blank" class="d1-btn">Live Preview</a>
@@ -2707,6 +2718,16 @@
             );
         });
       }
+      // ══════════════════════════════════════════════════
+      //  PROJECT ACCORDION (Click to Toggle)
+      // ══════════════════════════════════════════════════
+      document.querySelectorAll('.d1-item').forEach(item => {
+        item.addEventListener('click', () => {
+          const isActive = item.classList.contains('active');
+          document.querySelectorAll('.d1-item').forEach(i => i.classList.remove('active'));
+          if (!isActive) item.classList.add('active');
+        });
+      });
     </script>
   </body>
 </html>
