@@ -951,21 +951,20 @@
 
       .d1-title {
         font-family: 'Space Grotesk', sans-serif;
-        font-size: clamp(2rem, 8vw, 6rem);
+        font-size: 6rem;
         font-weight: 800;
         text-transform: uppercase;
         color: transparent;
         -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.3);
         transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
         margin: 0;
-        line-height: 1.1;
-        word-break: break-word;
+        line-height: 1;
       }
 
       .d1-item:hover .d1-title {
         color: #fff;
         -webkit-text-stroke: 0px transparent;
-        transform: translateX(15px);
+        transform: translateX(20px);
       }
 
       .d1-item:hover .d1-num {
@@ -976,26 +975,15 @@
         max-height: 0;
         opacity: 0;
         transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
-        padding-left: clamp(20px, 10%, 150px);
-        padding-right: clamp(20px, 10%, 150px);
+        padding-left: 10%;
+        padding-right: 10%;
         overflow: hidden;
       }
 
-      .d1-item.active .d1-content {
-        max-height: 500px;
+      .d1-item:hover .d1-content {
+        max-height: 400px;
         opacity: 1;
         margin-top: 40px;
-        padding-bottom: 20px;
-      }
-
-      .d1-item.active .d1-title {
-        color: #fff;
-        -webkit-text-stroke: 0px transparent;
-        transform: translateX(15px);
-      }
-
-      .d1-item.active .d1-num {
-        color: var(--accent);
       }
 
       .d1-desc {
@@ -1051,13 +1039,13 @@
       }
 
       @media(max-width: 1024px) {
+        .d1-title { font-size: 4rem; }
         .d1-content { padding-left: 5%; padding-right: 5%; }
       }
       @media(max-width: 768px) {
-        .d1-item { padding: 30px 0; }
+        .d1-title { font-size: 2.5rem; -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3); }
         .d1-content { padding-left: 0; padding-right: 0; }
-        .d1-item:hover .d1-title { transform: translateX(5px); }
-        .d1-desc { font-size: 1rem; }
+        .d1-item:hover .d1-title { transform: translateX(10px); }
       }
 
       .spotlight {
@@ -1741,12 +1729,12 @@
             <h3 class="d1-title">RAMYA CAREER GUIDANCE</h3>
           </div>
           <div class="d1-content">
-            <p class="d1-desc">An institutional-grade career guidance ecosystem architected with the MERN stack. Engineered for multi-tenant scalability, featuring advanced data orchestration and an automated logic engine for student-partner synchronization.</p>
+            <p class="d1-desc">A sophisticated MERN stack platform for multi-tenant career consulting. Features complex data orchestration and automated student-partner matching logic.</p>
             <div class="d1-tags">
-              <span>MERN Stack</span>
-              <span>Data Orchestration</span>
-              <span>Scalability</span>
-              <span>Multi-tenant</span>
+              <span>MongoDB</span>
+              <span>Express</span>
+              <span>React</span>
+              <span>Node.js</span>
             </div>
             <div class="d1-links">
               <a href="https://ramya-carrer-guidance-rmee.onrender.com" target="_blank" class="d1-btn">Live Preview</a>
@@ -1948,7 +1936,7 @@
         </a>
 
         <a
-          href="https://www.instagram.com/sugar_hugs_0505?igsh=MTAyb3M3ODhlYnhpZQ=="
+          href="https://www.instagram.com/tanmoymukherjee"
           class="social-icon"
           target="_blank"
           aria-label="Instagram"
@@ -2695,18 +2683,6 @@
             );
         });
       }
-      // ══════════════════════════════════════════════════
-      //  PROJECT ACCORDION (Click to Toggle)
-      // ══════════════════════════════════════════════════
-      document.querySelectorAll('.d1-item').forEach(item => {
-        item.addEventListener('click', () => {
-          const isActive = item.classList.contains('active');
-          // Close others
-          document.querySelectorAll('.d1-item').forEach(i => i.classList.remove('active'));
-          // Toggle current
-          if (!isActive) item.classList.add('active');
-        });
-      });
     </script>
   </body>
 </html>
