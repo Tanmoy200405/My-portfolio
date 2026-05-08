@@ -1542,10 +1542,102 @@
           transform: rotate(360deg);
         }
       }
+      /* ── LOADER ── */
+      #loader {
+        position: fixed;
+        inset: 0;
+        background: #050505;
+        z-index: 10000;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .loader-content {
+        text-align: center;
+        position: relative;
+        z-index: 10;
+      }
+
+      .loader-text-container {
+        overflow: hidden;
+        margin-bottom: 20px;
+      }
+
+      .loader-main-text {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: clamp(3rem, 12vw, 8rem);
+        font-weight: 800;
+        letter-spacing: -4px;
+        color: #fff;
+        line-height: 1;
+        background: linear-gradient(135deg, var(--blue), var(--cyan), #fff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        transform: translateY(100%);
+      }
+
+      .loader-sub-text {
+        font-family: "JetBrains Mono", monospace;
+        font-size: clamp(0.8rem, 2vw, 1.2rem);
+        color: var(--dim);
+        letter-spacing: 6px;
+        text-transform: uppercase;
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      .loader-progress-container {
+        width: 200px;
+        height: 2px;
+        background: rgba(255, 255, 255, 0.1);
+        margin-top: 40px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .loader-progress-bar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 0%;
+        background: var(--accent);
+        box-shadow: 0 0 15px var(--accent);
+      }
+
+      .loader-bg-text {
+        position: absolute;
+        font-size: 20vw;
+        font-weight: 900;
+        color: rgba(255, 255, 255, 0.02);
+        white-space: nowrap;
+        pointer-events: none;
+        z-index: 1;
+        user-select: none;
+      }
+
+      body.loading {
+        overflow: hidden !important;
+      }
     </style>
   </head>
 
-  <body>
+  <body class="loading">
+    <div id="loader">
+      <div class="loader-bg-text">TANMOY</div>
+      <div class="loader-content">
+        <div class="loader-text-container">
+          <h1 class="loader-main-text">TANMOY</h1>
+        </div>
+        <p class="loader-sub-text">Welcome to Tanmoy</p>
+        <div class="loader-progress-container">
+          <div class="loader-progress-bar"></div>
+        </div>
+      </div>
+    </div>
     <div id="cur"></div>
     <div id="cur-dot"></div>
     <div id="progress"></div>
@@ -1574,7 +1666,7 @@
 
     <!-- ════════ HERO ════════ -->
     <section id="hero">
-      <div class="hero-content up">
+      <div class="hero-content">
         <h1 class="hero-name">
           <span>Hello, I'm</span>
           <span class="line2">Tanmoy Mukherjee</span>
@@ -2729,6 +2821,51 @@
           document.querySelectorAll('.d1-item').forEach(i => i.classList.remove('active'));
           if (!isActive) item.classList.add('active');
         });
+      });
+
+      // ══════════════════════════════════════════════════
+      //  LOADER ANIMATION
+      // ══════════════════════════════════════════════════
+      window.addEventListener('load', () => {
+        const tl = gsap.timeline();
+        
+        tl.to(".loader-main-text", {
+          y: 0,
+          duration: 1.2,
+          ease: "expo.out"
+        })
+        .to(".loader-sub-text", {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "expo.out"
+        }, "-=0.8")
+        .to(".loader-progress-bar", {
+          width: "100%",
+          duration: 2,
+          ease: "power4.inOut"
+        }, "-=1")
+        .to(".loader-content, .loader-bg-text", {
+          opacity: 0,
+          scale: 0.9,
+          duration: 0.8,
+          ease: "expo.in"
+        })
+        .to("#loader", {
+          y: "-100%",
+          duration: 1,
+          ease: "expo.inOut"
+        }, "-=0.2")
+        .call(() => {
+          document.body.classList.remove('loading');
+        })
+        .from("#hero .hero-content > *, #cryptexWrapper", {
+          y: 50,
+          opacity: 0,
+          duration: 1,
+          stagger: 0.1,
+          ease: "expo.out"
+        }, "-=0.5");
       });
     </script>
   </body>
