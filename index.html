@@ -920,11 +920,11 @@
       }
 
       .terminal-body {
-        padding: 35px 40px;
-        min-height: 340px;
+        padding: 25px 30px;
+        min-height: 200px;
         display: flex;
         flex-direction: column;
-        gap: 18px;
+        gap: 10px;
         background: linear-gradient(180deg, rgba(15,15,20,0.5) 0%, rgba(5,5,10,0.8) 100%);
       }
 
@@ -933,6 +933,8 @@
         font-size: 1.05rem;
         line-height: 1.7;
         white-space: pre-wrap;
+        word-wrap: break-word;
+        word-break: break-word;
       }
 
       .term-hl {
@@ -982,6 +984,45 @@
         }
         100% {
           transform: translate(0);
+        }
+      }
+
+      /* Terminal Responsive Overrides */
+      @media (max-width: 768px) {
+        .terminal-wrapper {
+          border-radius: 8px;
+        }
+        .terminal-header {
+          padding: 10px 15px;
+        }
+        .term-title {
+          font-size: 0.8rem;
+          padding-right: 40px;
+        }
+        .terminal-body {
+          padding: 20px 25px;
+          min-height: 250px;
+        }
+        .term-line {
+          font-size: 0.9rem;
+          line-height: 1.5;
+        }
+      }
+      
+      @media (max-width: 480px) {
+        .terminal-body {
+          padding: 15px 20px;
+          min-height: auto;
+          gap: 12px;
+        }
+        .term-line {
+          font-size: 0.8rem;
+          line-height: 1.4;
+        }
+        .term-btn {
+          width: 12px;
+          height: 12px;
+          margin-right: 6px;
         }
       }
 
@@ -1885,42 +1926,27 @@
         </div>
         <div class="terminal-body" id="termBody">
           <div class="term-line" data-delay="0">
-            &gt; <span class="term-blue">[INFO]</span> SYSTEM MOUNTED. STARTING
-            PROTOCOL...
+            &gt; <span class="term-blue">[INFO]</span> SYSTEM MOUNTED. STARTING PROTOCOL...
           </div>
-          <div class="term-line" data-delay="600">
-            &gt; <span class="term-blue">[INFO]</span> INITIALIZING
-            FRONTEND_CORE...
-            <span class="term-hl">[HTML5, CSS3, JS, REACT, TAILWIND]</span>
-            <span class="term-hl">[100%]</span>
+          <div class="term-line" data-delay="500">
+            &gt; <span class="term-blue">[FRONTEND]</span> <span class="term-hl">React, HTML5, CSS3, JS, Tailwind CSS</span>
           </div>
-          <div class="term-line" data-delay="1300">
-            &gt; <span class="term-blue">[INFO]</span> MOUNTING
-            BACKEND_SERVICES...
-            <span class="term-hl">[NODE.JS, EXPRESS.JS]</span>
-            <span class="term-hl">[100%]</span>
+          <div class="term-line" data-delay="1000">
+            &gt; <span class="term-blue">[BACKEND]</span> <span class="term-hl">Node.js, Express.js</span>
+          </div>
+          <div class="term-line" data-delay="1500">
+            &gt; <span class="term-blue">[DATABASES]</span> <span class="term-hl">MongoDB, Mongoose</span>
           </div>
           <div class="term-line" data-delay="2000">
-            &gt; <span class="term-blue">[INFO]</span> CONNECTING DATABASES...
-            <span class="term-hl">[MONGODB, MONGOOSE]</span>
-            <span class="term-hl">[100%]</span>
+            &gt; <span class="term-blue">[LANGUAGES]</span> <span class="term-hl">Java</span>
           </div>
-          <div class="term-line" data-delay="2700">
-            &gt; <span class="term-blue">[INFO]</span> COMPILING OOP_LOGIC...
-            <span class="term-hl">[JAVA]</span>
-            <span class="term-hl">[100%]</span>
+          <div class="term-line" data-delay="2500">
+            &gt; <span class="term-blue">[TOOLS]</span> <span class="term-hl">Git, GitHub, Postman, REST API</span>
           </div>
-          <div class="term-line" data-delay="3300">
-            &gt; <span class="term-blue">[INFO]</span> LOADING
-            DEVELOPER_TOOLS...
-            <span class="term-hl">[GIT, GITHUB, POSTMAN, REST API]</span>
-            <span class="term-hl">[100%]</span>
+          <div class="term-line" data-delay="3000">
+            &gt; <span class="term-blue">[SUCCESS]</span> ALL SYSTEMS NOMINAL. READY FOR INPUT.
           </div>
-          <div class="term-line" data-delay="4000">
-            &gt; <span class="term-blue">[SUCCESS]</span> ALL SYSTEMS NOMINAL.
-            READY FOR INPUT.
-          </div>
-          <div class="term-line" data-delay="4300">
+          <div class="term-line" data-delay="3500">
             &gt; <span class="term-cursor">_</span>
           </div>
         </div>
