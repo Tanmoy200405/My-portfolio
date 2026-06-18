@@ -9,7 +9,10 @@
       name="description"
       content="Tanmoy Mukherjee's professional portfolio. Discover high-performance web development, cinematic experiences, and elegant solutions by Tanmoy Mukherjee."
     />
-    <meta name="keywords" content="Tanmoy Mukherjee, Web Developer, Portfolio, Software Engineer, Full Stack Developer, Tanmoy Mukherjee Portfolio" />
+    <meta
+      name="keywords"
+      content="Tanmoy Mukherjee, Web Developer, Portfolio, Software Engineer, Full Stack Developer, Tanmoy Mukherjee Portfolio"
+    />
     <meta name="author" content="Tanmoy Mukherjee" />
     <meta name="robots" content="index, follow" />
 
@@ -25,18 +28,18 @@
 
     <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Tanmoy Mukherjee",
-      "url": "https://tanmoymukherjee.me",
-      "jobTitle": "Web Developer",
-      "sameAs": [
-        "https://github.com/Tanmoy200405",
-        "https://www.linkedin.com/in/tanmoy-mukherjee/"
-      ],
-      "description": "Tanmoy Mukherjee is a passionate web developer specializing in solving complex problems with elegant solutions."
-    }
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Tanmoy Mukherjee",
+        "url": "https://tanmoymukherjee.me",
+        "jobTitle": "Web Developer",
+        "sameAs": [
+          "https://github.com/Tanmoy200405",
+          "https://www.linkedin.com/in/tanmoy-mukherjee/"
+        ],
+        "description": "Tanmoy Mukherjee is a passionate web developer specializing in solving complex problems with elegant solutions."
+      }
     </script>
 
     <link
@@ -430,7 +433,9 @@
         animation: blinkCursor 0.8s step-end infinite;
       }
       @keyframes blinkCursor {
-        50% { border-color: transparent; }
+        50% {
+          border-color: transparent;
+        }
       }
 
       .hero-desc {
@@ -546,7 +551,9 @@
         background: rgba(5, 5, 5, 0.9);
         border: 1px solid rgba(0, 122, 255, 0.3);
         color: var(--accent);
-        font: 700 1.6rem "JetBrains Mono", monospace;
+        font:
+          700 1.6rem "JetBrains Mono",
+          monospace;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -566,7 +573,9 @@
         border: 2px solid var(--accent);
         border-radius: 4px;
         pointer-events: none;
-        box-shadow: 0 0 15px var(--accent-glow), inset 0 0 10px rgba(0, 122, 255, 0.2);
+        box-shadow:
+          0 0 15px var(--accent-glow),
+          inset 0 0 10px rgba(0, 122, 255, 0.2);
         z-index: 10;
         background: rgba(0, 122, 255, 0.05);
       }
@@ -576,7 +585,9 @@
       }
 
       .cryptex-status {
-        font: 700 1.2rem "JetBrains Mono", monospace;
+        font:
+          700 1.2rem "JetBrains Mono",
+          monospace;
         color: var(--accent);
         margin-bottom: 15px;
         text-transform: uppercase;
@@ -600,7 +611,9 @@
         border: 1px solid var(--accent);
         color: var(--accent);
         padding: 8px 16px;
-        font: 600 0.9rem "JetBrains Mono", monospace;
+        font:
+          600 0.9rem "JetBrains Mono",
+          monospace;
         cursor: pointer;
         text-transform: uppercase;
         transition: all 0.3s;
@@ -841,90 +854,83 @@
         background: var(--bg);
       }
 
-      /* ── TERMINAL SKILLS ── */
-      .terminal-wrapper {
-        max-width: 800px;
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+        max-width: 1200px;
         margin: 0 auto;
-        background: #0a0a0a;
-        border: 1px solid var(--accent);
-        border-radius: 8px;
-        overflow: hidden;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.5), inset 0 0 15px rgba(0, 122, 255, 0.1);
-        font-family: "JetBrains Mono", monospace;
-        text-align: left;
-      }
-
-      .terminal-header {
-        background: #1a1a1a;
-        padding: 10px 15px;
-        display: flex;
-        align-items: center;
-        border-bottom: 1px solid var(--accent);
-      }
-
-      .term-btn {
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        margin-right: 8px;
-      }
-      .term-btn.red { background: #ff3b30; }
-      .term-btn.yellow { background: #ffcc00; }
-      .term-btn.green { background: #28cd41; }
-
-      .term-title {
-        color: var(--dim);
-        font-size: 0.85rem;
-        margin-left: auto;
-        margin-right: auto;
-        padding-right: 40px; /* Offset the buttons to center */
-        letter-spacing: 1px;
-      }
-
-      .terminal-body {
-        padding: 25px;
-        min-height: 280px;
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-      }
-
-      .term-line {
-        color: #e0e0e0;
-        font-size: 0.95rem;
-        line-height: 1.6;
-        white-space: pre-wrap;
-      }
-
-      .term-hl {
-        color: var(--accent);
-        text-shadow: 0 0 5px rgba(0, 122, 255, 0.5);
       }
       
-      .term-blue {
-        color: var(--blue);
+      .skill-card {
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 16px;
+        padding: 40px 30px;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
       }
-
-      .term-cursor {
-        animation: blink 1s step-end infinite;
-        color: var(--accent);
+      
+      .skill-card::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at 50% -20%, rgba(0, 122, 255, 0.15), transparent 70%);
+        z-index: -1;
+        opacity: 0;
+        transition: opacity 0.4s ease;
       }
-
-      @keyframes blink {
-        50% { opacity: 0; }
+      
+      .skill-card:hover {
+        transform: translateY(-10px);
+        border-color: rgba(0, 122, 255, 0.3);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 122, 255, 0.1);
       }
-
-      /* Typwriter glitch effect class applied by JS */
-      .glitch-text {
-        animation: textGlitch 0.2s linear infinite;
+      
+      .skill-card:hover::before {
+        opacity: 1;
       }
-      @keyframes textGlitch {
-        0% { transform: translate(0) }
-        20% { transform: translate(-2px, 1px) }
-        40% { transform: translate(-1px, -1px) }
-        60% { transform: translate(2px, 1px) }
-        80% { transform: translate(1px, -1px) }
-        100% { transform: translate(0) }
+      
+      .skill-icon {
+        width: 36px;
+        height: 36px;
+        stroke: var(--accent);
+      }
+      
+      .skill-category {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: var(--text);
+        letter-spacing: -0.5px;
+      }
+      
+      .skill-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      
+      .skill-list span {
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        padding: 6px 14px;
+        border-radius: 100px;
+        font-size: 0.85rem;
+        color: var(--dim);
+        transition: all 0.3s ease;
+        font-family: 'JetBrains Mono', monospace;
+      }
+      
+      .skill-card:hover .skill-list span {
+        color: #fff;
+        border-color: rgba(0, 122, 255, 0.3);
+        background: rgba(0, 122, 255, 0.1);
       }
 
       /* ── PROJECTS (Design 1 - Giant Outline Accordion) ── */
@@ -962,15 +968,15 @@
       }
 
       .d1-num {
-        font-family: 'Space Grotesk', sans-serif;
+        font-family: "Space Grotesk", sans-serif;
         font-size: 1.5rem;
-        color: rgba(255,255,255,0.3);
+        color: rgba(255, 255, 255, 0.3);
         transition: color 0.4s;
         flex-shrink: 0;
       }
 
       .d1-title {
-        font-family: 'Space Grotesk', sans-serif;
+        font-family: "Space Grotesk", sans-serif;
         font-size: clamp(2rem, 8vw, 6rem);
         font-weight: 800;
         text-transform: uppercase;
@@ -1033,7 +1039,7 @@
       }
 
       .d1-tags span {
-        font-family: 'Space Grotesk', sans-serif;
+        font-family: "Space Grotesk", sans-serif;
         font-size: 0.9rem;
         color: var(--accent);
         background: rgba(0, 122, 255, 0.1);
@@ -1057,7 +1063,7 @@
         color: #fff;
         text-decoration: none;
         border-radius: 6px;
-        font-family: 'Space Grotesk', sans-serif;
+        font-family: "Space Grotesk", sans-serif;
         font-weight: 600;
         font-size: 0.95rem;
         transition: all 0.3s;
@@ -1070,24 +1076,50 @@
         transform: translateY(-3px);
       }
 
-      @media(max-width: 1024px) {
-        .d1-content { padding-left: 5%; padding-right: 5%; }
+      @media (max-width: 1024px) {
+        .d1-content {
+          padding-left: 5%;
+          padding-right: 5%;
+        }
       }
-      @media(max-width: 768px) {
-        .d1-item { padding: 30px 0; }
-        .d1-title-wrapper { align-items: flex-start; gap: 12px; }
-        .d1-num { font-size: 1.1rem; margin-top: 6px; }
-        .d1-title { font-size: clamp(1.4rem, 6.5vw, 2rem); }
-        .d1-content { padding-left: 0; padding-right: 0; }
-        .d1-item:hover .d1-title { transform: translateX(8px); }
-        .d1-desc { font-size: 0.95rem; }
+      @media (max-width: 768px) {
+        .d1-item {
+          padding: 30px 0;
+        }
+        .d1-title-wrapper {
+          align-items: flex-start;
+          gap: 12px;
+        }
+        .d1-num {
+          font-size: 1.1rem;
+          margin-top: 6px;
+        }
+        .d1-title {
+          font-size: clamp(1.4rem, 6.5vw, 2rem);
+        }
+        .d1-content {
+          padding-left: 0;
+          padding-right: 0;
+        }
+        .d1-item:hover .d1-title {
+          transform: translateX(8px);
+        }
+        .d1-desc {
+          font-size: 0.95rem;
+        }
       }
 
       .spotlight {
         position: fixed;
-        top: 0; left: 0;
-        width: 400px; height: 400px;
-        background: radial-gradient(circle, rgba(0, 122, 255, 0.15) 0%, transparent 70%);
+        top: 0;
+        left: 0;
+        width: 400px;
+        height: 400px;
+        background: radial-gradient(
+          circle,
+          rgba(0, 122, 255, 0.15) 0%,
+          transparent 70%
+        );
         border-radius: 50%;
         transform: translate(-50%, -50%);
         pointer-events: none;
@@ -1116,7 +1148,9 @@
       }
 
       .hist-col-title {
-        font: 700 1.2rem "JetBrains Mono", monospace;
+        font:
+          700 1.2rem "JetBrains Mono",
+          monospace;
         color: var(--accent);
         margin-bottom: 50px;
         display: flex;
@@ -1173,7 +1207,9 @@
       }
 
       .hist-date {
-        font: 700 0.85rem "JetBrains Mono", monospace;
+        font:
+          700 0.85rem "JetBrains Mono",
+          monospace;
         color: var(--accent);
         margin-bottom: 8px;
         display: block;
@@ -1276,7 +1312,9 @@
         color: #fff;
         border: none;
         border-radius: 12px;
-        font: 600 1.03rem "Space Grotesk", sans-serif;
+        font:
+          600 1.03rem "Space Grotesk",
+          sans-serif;
         cursor: pointer;
         transition: all 0.3s ease;
         box-shadow: 0 5px 20px var(--accent-glow);
@@ -1673,7 +1711,9 @@
         </h1>
         <p class="hero-role"><span id="typed"></span></p>
         <p class="hero-desc">
-          Every complex problem has an elegant solution &mdash; you just need the right strategy. I architect high-performance, cinematic web experiences that solve real-world challenges through pure logic.
+          Every complex problem has an elegant solution &mdash; you just need
+          the right strategy. I architect high-performance, cinematic web
+          experiences that solve real-world challenges through pure logic.
         </p>
         <div class="hero-btns">
           <a href="#projects" class="btn-p btn-m">View Creations &rarr;</a>
@@ -1735,13 +1775,20 @@
         <div class="about-bio up">
           <div class="about-text">
             <p>
-              Like orchestrating a complex system, intricate problems reveal their elegant solutions when broken into logical architectures. I am an engineer who transforms complex data and design requirements into high-scale, cinematic digital experiences.
+              Like orchestrating a complex system, intricate problems reveal
+              their elegant solutions when broken into logical architectures. I
+              am an engineer who transforms complex data and design requirements
+              into high-scale, cinematic digital experiences.
             </p>
             <p>
-              With deep expertise in advanced frontend motion systems, robust backend logic, and scalable database orchestration, I architect seamless full-stack applications. I approach every challenge with absolute precision and an uncompromising eye for aesthetics.
+              With deep expertise in advanced frontend motion systems, robust
+              backend logic, and scalable database orchestration, I architect
+              seamless full-stack applications. I approach every challenge with
+              absolute precision and an uncompromising eye for aesthetics.
             </p>
             <p class="about-accent">
-              "Every complex system is an orchestration of logic waiting for the perfect architecture."
+              "Every complex system is an orchestration of logic waiting for the
+              perfect architecture."
             </p>
           </div>
         </div>
@@ -1777,22 +1824,76 @@
         <div class="sec-tag">02 &mdash; Skills</div>
         <h2 class="sec-title">My <span>Tech Stack</span></h2>
       </div>
-      <div class="terminal-wrapper up">
-        <div class="terminal-header">
-          <div class="term-btn red"></div>
-          <div class="term-btn yellow"></div>
-          <div class="term-btn green"></div>
-          <div class="term-title">system_boot_sequence.sh</div>
+      <div class="skills-grid up">
+        <div class="skill-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="skill-icon">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+            <line x1="8" y1="21" x2="16" y2="21"></line>
+            <line x1="12" y1="17" x2="12" y2="21"></line>
+          </svg>
+          <div class="skill-category">Frontend Core</div>
+          <div class="skill-list">
+            <span>HTML5</span>
+            <span>CSS3</span>
+            <span>JavaScript</span>
+            <span>React</span>
+            <span>Tailwind CSS</span>
+          </div>
         </div>
-        <div class="terminal-body" id="termBody">
-          <div class="term-line" data-delay="0">&gt; <span class="term-blue">[INFO]</span> SYSTEM MOUNTED. STARTING PROTOCOL...</div>
-          <div class="term-line" data-delay="600">&gt; <span class="term-blue">[INFO]</span> INITIALIZING FRONTEND_CORE... <span class="term-hl">[HTML5, CSS3, JS, REACT, TAILWIND]</span> <span class="term-hl">[100%]</span></div>
-          <div class="term-line" data-delay="1300">&gt; <span class="term-blue">[INFO]</span> MOUNTING BACKEND_SERVICES... <span class="term-hl">[NODE.JS, EXPRESS.JS]</span> <span class="term-hl">[100%]</span></div>
-          <div class="term-line" data-delay="2000">&gt; <span class="term-blue">[INFO]</span> CONNECTING DATABASES... <span class="term-hl">[MONGODB, MONGOOSE]</span> <span class="term-hl">[100%]</span></div>
-          <div class="term-line" data-delay="2700">&gt; <span class="term-blue">[INFO]</span> COMPILING OOP_LOGIC... <span class="term-hl">[JAVA]</span> <span class="term-hl">[100%]</span></div>
-          <div class="term-line" data-delay="3300">&gt; <span class="term-blue">[INFO]</span> LOADING DEVELOPER_TOOLS... <span class="term-hl">[GIT, GITHUB, POSTMAN, REST API]</span> <span class="term-hl">[100%]</span></div>
-          <div class="term-line" data-delay="4000">&gt; <span class="term-blue">[SUCCESS]</span> ALL SYSTEMS NOMINAL. READY FOR INPUT.</div>
-          <div class="term-line" data-delay="4300">&gt; <span class="term-cursor">_</span></div>
+
+        <div class="skill-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="skill-icon">
+            <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+            <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+            <line x1="6" y1="6" x2="6.01" y2="6"></line>
+            <line x1="6" y1="18" x2="6.01" y2="18"></line>
+          </svg>
+          <div class="skill-category">Backend Services</div>
+          <div class="skill-list">
+            <span>Node.js</span>
+            <span>Express.js</span>
+            <span>REST APIs</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="skill-icon">
+            <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+            <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+            <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+          </svg>
+          <div class="skill-category">Databases</div>
+          <div class="skill-list">
+            <span>MongoDB</span>
+            <span>Mongoose</span>
+            <span>SQL</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="skill-icon">
+            <polyline points="16 18 22 12 16 6"></polyline>
+            <polyline points="8 6 2 12 8 18"></polyline>
+          </svg>
+          <div class="skill-category">OOP & Logic</div>
+          <div class="skill-list">
+            <span>Java</span>
+            <span>C++</span>
+            <span>Algorithms</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="skill-icon">
+            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+          </svg>
+          <div class="skill-category">Developer Tools</div>
+          <div class="skill-list">
+            <span>Git</span>
+            <span>GitHub</span>
+            <span>Postman</span>
+            <span>Vercel</span>
+          </div>
         </div>
       </div>
     </section>
@@ -1809,21 +1910,62 @@
       <div class="sec-head">
         <div class="sec-tag">03 &mdash; Projects</div>
         <h2 class="sec-title" data-scramble>Selected <span>Creations</span></h2>
-        <p class="sec-sub">Building solutions with high-scale logic and aesthetic precision.</p>
+        <p class="sec-sub">
+          Building solutions with high-scale logic and aesthetic precision.
+        </p>
       </div>
 
       <div class="d1-list">
-        <!-- Tropica -->
+        <!-- Potato -->
         <div class="d1-item">
           <div class="d1-title-wrapper">
             <span class="d1-num">01</span>
-            <h3 class="d1-title">TROPICA</h3>
+            <h3 class="d1-title">POTATO</h3>
           </div>
           <div class="d1-content">
-            <p class="d1-desc">An ultra-premium cinematic nature portfolio showcasing complex GSAP scroll logic, custom cursors, and Awwwards-winning visual design paradigms.</p>
-            <div class="d1-tags"><span>GSAP</span><span>WebGL</span><span>CSS3</span></div>
+            <p class="d1-desc">
+              A lightweight web app focused on simple productivity and fast
+              interactions.
+            </p>
+            <div class="d1-tags">
+              <span>React</span>
+              <span>Vercel</span>
+              <span>UI</span>
+            </div>
             <div class="d1-links">
-              <a href="https://tropical-xlg2.onrender.com/" target="_blank" class="d1-btn">Live Preview</a>
+              <a
+                href="https://potato-zeta-wheat.vercel.app/"
+                target="_blank"
+                class="d1-btn"
+                >Live Preview</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Children Education Academy -->
+        <div class="d1-item">
+          <div class="d1-title-wrapper">
+            <span class="d1-num">02</span>
+            <h3 class="d1-title">CHILDREN EDUCATION ACADEMY</h3>
+          </div>
+          <div class="d1-content">
+            <p class="d1-desc">
+              A responsive school website showcasing programs, admissions, and
+              resources for parents.
+            </p>
+            <div class="d1-tags">
+              <span>Education</span>
+              <span>Responsive</span>
+              <span>Vercel</span>
+            </div>
+            <div class="d1-links">
+              <a
+                href="https://children-education-academy.vercel.app/"
+                target="_blank"
+                class="d1-btn"
+                >Live Preview</a
+              >
             </div>
           </div>
         </div>
@@ -1831,42 +1973,27 @@
         <!-- Ramya Career Guidance -->
         <div class="d1-item">
           <div class="d1-title-wrapper">
-            <span class="d1-num">02</span>
+            <span class="d1-num">03</span>
             <h3 class="d1-title">RAMYA CAREER GUIDANCE</h3>
           </div>
           <div class="d1-content">
-            <p class="d1-desc">An institutional-grade career guidance ecosystem architected with the MERN stack. Engineered for multi-tenant scalability, featuring advanced data orchestration and an automated logic engine for student-partner synchronization.</p>
+            <p class="d1-desc">
+              An institutional-grade career guidance ecosystem architected with
+              the MERN stack. Engineered for multi-tenant scalability and
+              advanced data orchestration.
+            </p>
             <div class="d1-tags">
               <span>MERN Stack</span>
               <span>Data Orchestration</span>
               <span>Scalability</span>
-              <span>Multi-tenant</span>
-              <span>Freelancing Project</span>
             </div>
             <div class="d1-links">
-              <a href="https://ramya-carrer-guidance-rmee.onrender.com" target="_blank" class="d1-btn">Live Preview</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Easy Bazzar -->
-        <div class="d1-item">
-          <div class="d1-title-wrapper">
-            <span class="d1-num">03</span>
-            <h3 class="d1-title">EASY BAZZAR</h3>
-          </div>
-          <div class="d1-content">
-            <p class="d1-desc">A full-featured MERN stack e-commerce platform with a modern UI, robust state management, and seamless payment integration.</p>
-            <div class="d1-tags">
-              <span>MongoDB</span>
-              <span>Express</span>
-              <span>React</span>
-              <span>Node.js</span>
-              <span>E-commerce</span>
-            </div>
-            <div class="d1-links">
-              <a href="https://easybazzar-1.onrender.com/" target="_blank" class="d1-btn">Live Preview</a>
-              <a href="https://github.com/Tanmoy200405/EasyBazzar" target="_blank" class="d1-btn">View Code</a>
+              <a
+                href="https://www.ramyacareerguidance.in/"
+                target="_blank"
+                class="d1-btn"
+                >Live Preview</a
+              >
             </div>
           </div>
         </div>
@@ -1883,35 +2010,63 @@
     <section id="history">
       <div class="sec-head">
         <div class="sec-tag">04 &mdash; Journey</div>
-        <h2 class="sec-title" data-scramble>Education & <span>Experience</span></h2>
-        <p class="sec-sub">A timeline of my professional and technical evolution.</p>
+        <h2 class="sec-title" data-scramble>
+          Education & <span>Experience</span>
+        </h2>
+        <p class="sec-sub">
+          A timeline of my professional and technical evolution.
+        </p>
       </div>
 
       <div class="history-container">
         <!-- Education -->
         <div class="hist-col">
           <div class="hist-col-title">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+              <path d="M6 12v5c3 3 9 3 12 0v-5" />
+            </svg>
             Education
           </div>
           <div class="hist-list">
             <div class="hist-line"></div>
             <div class="hist-line-grow"></div>
-            
+
             <div class="hist-item">
               <div class="hist-dot"></div>
               <span class="hist-date">2024 &mdash; 2028</span>
               <h3 class="hist-title">B.Tech in Information Technology</h3>
-              <span class="hist-inst">St. Thomas' College of Engineering & Technology</span>
-              <p class="hist-desc">Diving deep into modern system architecture and network infrastructure, building a robust engineering foundation for high-scale tech solutions.</p>
+              <span class="hist-inst"
+                >St. Thomas' College of Engineering & Technology</span
+              >
+              <p class="hist-desc">
+                Diving deep into modern system architecture and network
+                infrastructure, building a robust engineering foundation for
+                high-scale tech solutions.
+              </p>
             </div>
 
             <div class="hist-item">
               <div class="hist-dot"></div>
               <span class="hist-date">2021 &mdash; 2023</span>
-              <h3 class="hist-title">Higher Secondary (HS) in Computer Science</h3>
+              <h3 class="hist-title">
+                Higher Secondary (HS) in Computer Science
+              </h3>
               <span class="hist-inst">Upasana Academy</span>
-              <p class="hist-desc">Mastered core fundamentals in algorithms and computer applications, sparking a lifelong passion for logical problem-solving and code optimization.</p>
+              <p class="hist-desc">
+                Mastered core fundamentals in algorithms and computer
+                applications, sparking a lifelong passion for logical
+                problem-solving and code optimization.
+              </p>
             </div>
 
             <div class="hist-item">
@@ -1919,7 +2074,11 @@
               <span class="hist-date">2014 &mdash; 2020</span>
               <h3 class="hist-title">Madhyamik (Secondary Education)</h3>
               <span class="hist-inst">A.K. Ghosh Memorial School</span>
-              <p class="hist-desc">Developed a strong academic foundation with a focus on analytical thinking and core sciences, excelling in early mathematical logic.</p>
+              <p class="hist-desc">
+                Developed a strong academic foundation with a focus on
+                analytical thinking and core sciences, excelling in early
+                mathematical logic.
+              </p>
             </div>
           </div>
         </div>
@@ -1927,19 +2086,37 @@
         <!-- Experience -->
         <div class="hist-col">
           <div class="hist-col-title">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+            </svg>
             Experience
           </div>
           <div class="hist-list">
             <div class="hist-line"></div>
             <div class="hist-line-grow"></div>
-            
+
             <div class="hist-item">
               <div class="hist-dot"></div>
               <span class="hist-date">2026 &mdash; PRESENT</span>
               <h3 class="hist-title">Institutional System Architect</h3>
               <span class="hist-inst">Freelance & Consulting</span>
-              <p class="hist-desc">Spearheading the development of institutional-grade ecosystems, specializing in the MERN stack. Most notably, architected a high-scale Career Guidance platform featuring multi-tenant scalability, advanced data orchestration, and automated student-partner synchronization logic with absolute precision.</p>
+              <p class="hist-desc">
+                Spearheading the development of institutional-grade ecosystems,
+                specializing in the MERN stack. Most notably, architected a
+                high-scale Career Guidance platform featuring multi-tenant
+                scalability, advanced data orchestration, and automated
+                student-partner synchronization logic with absolute precision.
+              </p>
             </div>
           </div>
         </div>
@@ -1957,7 +2134,9 @@
       <div class="sec-head">
         <div class="sec-tag">05 &mdash; Contact</div>
         <h2 class="sec-title">Let's <span>Collaborate</span></h2>
-        <p class="sec-sub">Have a complex vision? Let's architect it together.</p>
+        <p class="sec-sub">
+          Have a complex vision? Let's architect it together.
+        </p>
       </div>
       <form id="contact-form" class="contact-box up">
         <div class="f-row">
@@ -2136,9 +2315,23 @@
             stroke-linecap="round"
             stroke-linejoin="round"
           >
-            <path d="M18.16 5.86c-1.39-1.04-3.13-1.61-4.9-1.8a.48.48 0 0 0-.44.25c-.17.34-.36.78-.5 1.15a15.86 15.86 0 0 0-4.66 0c-.14-.37-.34-.81-.5-1.15a.48.48 0 0 0-.44-.25c-1.78.19-3.52.76-4.9 1.8a.47.47 0 0 0-.21.36c-2.34 6.78-2.6 13.34-2.58 13.43a.5.5 0 0 0 .18.34 16.32 16.32 0 0 0 4.88 2.5.47.47 0 0 0 .5-.17c.36-.48.69-.99.98-1.52a.48.48 0 0 0-.25-.67c-1.14-.42-2.2-1-3.15-1.73a.47.47 0 0 1 .05-.8c.2-.15.41-.31.6-.48a.49.49 0 0 1 .52-.08c3.27 1.48 6.8 1.48 10.04 0a.49.49 0 0 1 .52.08c.2.17.4.33.6.48a.47.47 0 0 1 .05.8 11.23 11.23 0 0 1-3.15 1.73.48.48 0 0 0-.25.67c.3.53.62 1.04.98 1.52a.47.47 0 0 0 .5.17 16.32 16.32 0 0 0 4.88-2.5.5.5 0 0 0 .18-.34c.02-.1 0-6.65-2.58-13.43a.47.47 0 0 0-.21-.36z"></path>
-            <circle cx="8.5" cy="13.5" r="1.5" fill="currentColor" stroke="none"></circle>
-            <circle cx="15.5" cy="13.5" r="1.5" fill="currentColor" stroke="none"></circle>
+            <path
+              d="M18.16 5.86c-1.39-1.04-3.13-1.61-4.9-1.8a.48.48 0 0 0-.44.25c-.17.34-.36.78-.5 1.15a15.86 15.86 0 0 0-4.66 0c-.14-.37-.34-.81-.5-1.15a.48.48 0 0 0-.44-.25c-1.78.19-3.52.76-4.9 1.8a.47.47 0 0 0-.21.36c-2.34 6.78-2.6 13.34-2.58 13.43a.5.5 0 0 0 .18.34 16.32 16.32 0 0 0 4.88 2.5.47.47 0 0 0 .5-.17c.36-.48.69-.99.98-1.52a.48.48 0 0 0-.25-.67c-1.14-.42-2.2-1-3.15-1.73a.47.47 0 0 1 .05-.8c.2-.15.41-.31.6-.48a.49.49 0 0 1 .52-.08c3.27 1.48 6.8 1.48 10.04 0a.49.49 0 0 1 .52.08c.2.17.4.33.6.48a.47.47 0 0 1 .05.8 11.23 11.23 0 0 1-3.15 1.73.48.48 0 0 0-.25.67c.3.53.62 1.04.98 1.52a.47.47 0 0 0 .5.17 16.32 16.32 0 0 0 4.88-2.5.5.5 0 0 0 .18-.34c.02-.1 0-6.65-2.58-13.43a.47.47 0 0 0-.21-.36z"
+            ></path>
+            <circle
+              cx="8.5"
+              cy="13.5"
+              r="1.5"
+              fill="currentColor"
+              stroke="none"
+            ></circle>
+            <circle
+              cx="15.5"
+              cy="13.5"
+              r="1.5"
+              fill="currentColor"
+              stroke="none"
+            ></circle>
           </svg>
         </a>
 
@@ -2171,8 +2364,10 @@
       </p>
 
       <p style="margin-top: 8px; font-size: 0.8rem">
-        &copy; 2026 All Rights Reserved | 
-        <strong><a href="#hero" class="footer-link">Tanmoy Mukherjee</a></strong>
+        &copy; 2026 All Rights Reserved |
+        <strong
+          ><a href="#hero" class="footer-link">Tanmoy Mukherjee</a></strong
+        >
       </p>
     </footer>
 
@@ -2230,9 +2425,17 @@
       // ══════════════════════════════════════════════════
       const prog = document.getElementById("progress");
       if (prog) {
-        window.addEventListener("scroll", () => {
-          prog.style.width = (window.scrollY / (document.documentElement.scrollHeight - innerHeight)) * 100 + "%";
-        }, { passive: true });
+        window.addEventListener(
+          "scroll",
+          () => {
+            prog.style.width =
+              (window.scrollY /
+                (document.documentElement.scrollHeight - innerHeight)) *
+                100 +
+              "%";
+          },
+          { passive: true },
+        );
       }
 
       // ══════════════════════════════════════════════════
@@ -2297,13 +2500,13 @@
       const cStatus = document.getElementById("cryptexStatus");
       const btnScramble = document.getElementById("btnScramble");
       const btnSolve = document.getElementById("btnSolve");
-      
+
       const PASSWORD = "SOLVE";
       const FACES = 12;
       const ANGLE_STEP = 360 / FACES;
       const RADIUS = 95;
       const LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-      
+
       let ringsData = [];
       let isUnlocked = false;
 
@@ -2313,18 +2516,21 @@
           const targetLetter = PASSWORD[i];
           const ringEl = document.createElement("div");
           ringEl.className = "cryptex-ring";
-          
+
           let ringFaces = [];
           for (let f = 0; f < FACES; f++) {
             const faceEl = document.createElement("div");
             faceEl.className = "cryptex-face";
-            let letter = f === 0 ? targetLetter : LETTERS[Math.floor(Math.random() * LETTERS.length)];
+            let letter =
+              f === 0
+                ? targetLetter
+                : LETTERS[Math.floor(Math.random() * LETTERS.length)];
             faceEl.textContent = letter;
             faceEl.style.transform = `rotateX(${f * ANGLE_STEP}deg) translateZ(${RADIUS}px)`;
             ringEl.appendChild(faceEl);
             ringFaces.push(faceEl);
           }
-          
+
           cryptexScene.appendChild(ringEl);
           ringsData.push({
             el: ringEl,
@@ -2332,10 +2538,14 @@
             targetAngle: 0,
             isDragging: false,
             startY: 0,
-            startAngle: 0
+            startAngle: 0,
           });
           ringEl.addEventListener("mousedown", (e) => startDrag(e, i));
-          ringEl.addEventListener("touchstart", (e) => startDrag(e.touches[0], i), {passive: false});
+          ringEl.addEventListener(
+            "touchstart",
+            (e) => startDrag(e.touches[0], i),
+            { passive: false },
+          );
         }
       }
 
@@ -2349,27 +2559,31 @@
       }
 
       window.addEventListener("mousemove", (e) => moveDrag(e));
-      window.addEventListener("touchmove", (e) => moveDrag(e.touches[0]), {passive: false});
+      window.addEventListener("touchmove", (e) => moveDrag(e.touches[0]), {
+        passive: false,
+      });
       window.addEventListener("mouseup", endDrag);
       window.addEventListener("touchend", endDrag);
 
       function moveDrag(e) {
-        ringsData.forEach(ring => {
+        ringsData.forEach((ring) => {
           if (ring.isDragging) {
             const deltaY = e.clientY - ring.startY;
-            ring.currentAngle = ring.startAngle - (deltaY * 0.5);
+            ring.currentAngle = ring.startAngle - deltaY * 0.5;
             ring.el.style.transform = `rotateX(${ring.currentAngle}deg)`;
           }
         });
       }
 
       function endDrag() {
-        ringsData.forEach(ring => {
+        ringsData.forEach((ring) => {
           if (ring.isDragging) {
             ring.isDragging = false;
-            ring.targetAngle = Math.round(ring.currentAngle / ANGLE_STEP) * ANGLE_STEP;
+            ring.targetAngle =
+              Math.round(ring.currentAngle / ANGLE_STEP) * ANGLE_STEP;
             ring.currentAngle = ring.targetAngle;
-            ring.el.style.transition = "transform 0.3s cubic-bezier(0.25, 1, 0.5, 1)";
+            ring.el.style.transition =
+              "transform 0.3s cubic-bezier(0.25, 1, 0.5, 1)";
             ring.el.style.transform = `rotateX(${ring.currentAngle}deg)`;
             checkSolve();
           }
@@ -2378,7 +2592,7 @@
 
       function checkSolve() {
         let solved = true;
-        ringsData.forEach(ring => {
+        ringsData.forEach((ring) => {
           let normalized = ((ring.currentAngle % 360) + 360) % 360;
           if (normalized !== 0) solved = false;
         });
@@ -2387,17 +2601,31 @@
           isUnlocked = true;
           cStatus.textContent = "System Unlocked";
           cStatus.classList.add("unlocked");
-          
+
           const tl = gsap.timeline();
-          tl.to(".cryptex-scene", { scale: 1.2, filter: "drop-shadow(0 0 30px var(--accent))", duration: 0.8, ease: "back.out(1.7)" })
-            .to(".cryptex-wrapper", { opacity: 0, y: -50, duration: 1, ease: "power4.inOut" }, "+=0.5")
-            .to(".hero-content > *:not(.cryptex-wrapper)", { opacity: 1, y: 0, stagger: 0.1, duration: 1, ease: "expo.out" }, "-=0.5")
+          tl.to(".cryptex-scene", {
+            scale: 1.2,
+            filter: "drop-shadow(0 0 30px var(--accent))",
+            duration: 0.8,
+            ease: "back.out(1.7)",
+          })
+            .to(
+              ".cryptex-wrapper",
+              { opacity: 0, y: -50, duration: 1, ease: "power4.inOut" },
+              "+=0.5",
+            )
+            .to(
+              ".hero-content > *:not(.cryptex-wrapper)",
+              { opacity: 1, y: 0, stagger: 0.1, duration: 1, ease: "expo.out" },
+              "-=0.5",
+            )
             .set(".cryptex-wrapper", { display: "none" });
         } else if (!solved && isUnlocked) {
           isUnlocked = false;
           cStatus.textContent = "System Locked";
           cStatus.classList.remove("unlocked");
-          cryptexScene.style.transform = "rotateY(-15deg) rotateX(-10deg) scale(1)";
+          cryptexScene.style.transform =
+            "rotateY(-15deg) rotateX(-10deg) scale(1)";
           cryptexScene.style.filter = "none";
         }
       }
@@ -2407,14 +2635,16 @@
         isUnlocked = false;
         cStatus.textContent = "System Locked";
         cStatus.classList.remove("unlocked");
-        cryptexScene.style.transform = "rotateY(-15deg) rotateX(-10deg) scale(1)";
+        cryptexScene.style.transform =
+          "rotateY(-15deg) rotateX(-10deg) scale(1)";
         cryptexScene.style.filter = "none";
         ringsData.forEach((ring, i) => {
           const randomRotations = Math.floor(Math.random() * 5) + 2;
           const randomFace = Math.floor(Math.random() * (FACES - 1)) + 1;
-          ring.targetAngle = ring.currentAngle + (randomRotations * 360) + (randomFace * ANGLE_STEP);
+          ring.targetAngle =
+            ring.currentAngle + randomRotations * 360 + randomFace * ANGLE_STEP;
           ring.currentAngle = ring.targetAngle;
-          ring.el.style.transition = `transform ${1.5 + (i * 0.2)}s cubic-bezier(0.25, 1, 0.5, 1)`;
+          ring.el.style.transition = `transform ${1.5 + i * 0.2}s cubic-bezier(0.25, 1, 0.5, 1)`;
           ring.el.style.transform = `rotateX(${ring.currentAngle}deg)`;
         });
       }
@@ -2425,7 +2655,7 @@
           const MathRound = Math.round(ring.currentAngle / 360);
           ring.targetAngle = MathRound * 360;
           ring.currentAngle = ring.targetAngle;
-          ring.el.style.transition = `transform ${1.5 + (i * 0.2)}s cubic-bezier(0.25, 1, 0.5, 1)`;
+          ring.el.style.transition = `transform ${1.5 + i * 0.2}s cubic-bezier(0.25, 1, 0.5, 1)`;
           ring.el.style.transform = `rotateX(${ring.currentAngle}deg)`;
         });
         setTimeout(checkSolve, 2500);
@@ -2443,7 +2673,7 @@
       class LogicResolver {
         constructor(canvas, type) {
           this.canvas = canvas;
-          this.ctx = canvas.getContext('2d');
+          this.ctx = canvas.getContext("2d");
           this.type = type;
           this.particles = [];
           this.active = false;
@@ -2454,7 +2684,7 @@
         init() {
           if (this.initialized) return;
           this.resize();
-          window.addEventListener('resize', () => this.resize());
+          window.addEventListener("resize", () => this.resize());
           this.createParticles();
           this.initialized = true;
         }
@@ -2467,7 +2697,7 @@
 
         createParticles() {
           this.particles = [];
-          const count = this.type === 'routing' ? 40 : 80;
+          const count = this.type === "routing" ? 40 : 80;
           for (let i = 0; i < count; i++) {
             this.particles.push({
               x: Math.random() * this.canvas.width,
@@ -2476,7 +2706,7 @@
               vy: (Math.random() - 0.5) * 1.8,
               size: Math.random() * 2 + 0.5,
               life: Math.random(),
-              history: []
+              history: [],
             });
           }
         }
@@ -2495,17 +2725,17 @@
         draw() {
           if (!this.active) return;
           this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-          
-          if (this.type === 'routing') this.drawRouting();
-          else if (this.type === 'growth') this.drawGrowth();
-          else if (this.type === 'system') this.drawSystem();
+
+          if (this.type === "routing") this.drawRouting();
+          else if (this.type === "growth") this.drawGrowth();
+          else if (this.type === "system") this.drawSystem();
 
           this.loopId = requestAnimationFrame(() => this.draw());
         }
 
         drawRouting() {
-          this.ctx.strokeStyle = 'rgba(0, 122, 255, 0.15)';
-          this.ctx.fillStyle = '#007aff';
+          this.ctx.strokeStyle = "rgba(0, 122, 255, 0.15)";
+          this.ctx.fillStyle = "#007aff";
           this.particles.forEach((p, i) => {
             p.x += p.vx;
             p.y += p.vy;
@@ -2532,17 +2762,25 @@
         }
 
         drawGrowth() {
-          this.ctx.strokeStyle = 'rgba(0, 122, 255, 0.4)';
+          this.ctx.strokeStyle = "rgba(0, 122, 255, 0.4)";
           this.ctx.lineWidth = 1;
-          this.particles.forEach(p => {
+          this.particles.forEach((p) => {
             this.ctx.beginPath();
             this.ctx.moveTo(p.x, p.y);
-            const angle = noise(p.x * 0.005, p.y * 0.005, Date.now() * 0.0001) * Math.PI * 4;
+            const angle =
+              noise(p.x * 0.005, p.y * 0.005, Date.now() * 0.0001) *
+              Math.PI *
+              4;
             p.x += Math.cos(angle) * 1.5;
             p.y += Math.sin(angle) * 1.5;
             this.ctx.lineTo(p.x, p.y);
             this.ctx.stroke();
-            if (p.x < 0 || p.x > this.canvas.width || p.y < 0 || p.y > this.canvas.height) {
+            if (
+              p.x < 0 ||
+              p.x > this.canvas.width ||
+              p.y < 0 ||
+              p.y > this.canvas.height
+            ) {
               p.x = Math.random() * this.canvas.width;
               p.y = Math.random() * this.canvas.height;
             }
@@ -2554,10 +2792,16 @@
           const time = Date.now() * 0.0015;
           for (let x = 0; x < this.canvas.width; x += spacing) {
             for (let y = 0; y < this.canvas.height; y += spacing) {
-              const dist = Math.hypot(x - this.canvas.width/2, y - this.canvas.height/2);
+              const dist = Math.hypot(
+                x - this.canvas.width / 2,
+                y - this.canvas.height / 2,
+              );
               const offset = Math.sin(time - dist * 0.015) * 10;
-              const size = Math.max(1, 4 + Math.sin(time * 0.5 - dist * 0.01) * 3);
-              this.ctx.fillStyle = `rgba(0, 122, 255, ${0.1 + (size/7) * 0.4})`;
+              const size = Math.max(
+                1,
+                4 + Math.sin(time * 0.5 - dist * 0.01) * 3,
+              );
+              this.ctx.fillStyle = `rgba(0, 122, 255, ${0.1 + (size / 7) * 0.4})`;
               this.ctx.beginPath();
               this.ctx.arc(x, y + offset, size, 0, Math.PI * 2);
               this.ctx.fill();
@@ -2572,10 +2816,15 @@
       }
 
       // 1. Spotlight effect tracking mouse
-      const spotlight = document.getElementById('spotlight');
+      const spotlight = document.getElementById("spotlight");
       if (spotlight) {
-        window.addEventListener('mousemove', (e) => {
-          gsap.to(spotlight, { x: e.clientX, y: e.clientY, duration: 0.5, ease: "power2.out" });
+        window.addEventListener("mousemove", (e) => {
+          gsap.to(spotlight, {
+            x: e.clientX,
+            y: e.clientY,
+            duration: 0.5,
+            ease: "power2.out",
+          });
         });
       }
 
@@ -2600,7 +2849,7 @@
       function typeWriter() {
         if (!typedEl) return;
         const currentWord = words[wi];
-        
+
         if (isDeleting) {
           typedEl.textContent = currentWord.substring(0, charIdx - 1);
           charIdx--;
@@ -2632,86 +2881,104 @@
       //  REVEAL ANIMATIONS
       // ══════════════════════════════════════════════════
       function initReveals() {
-
         // Generic .up reveal
-        document.querySelectorAll(".up").forEach(el => {
+        document.querySelectorAll(".up").forEach((el) => {
           gsap.from(el, {
             scrollTrigger: {
               trigger: el,
               start: "top 90%",
-              toggleActions: "play none none none"
+              toggleActions: "play none none none",
             },
             opacity: 0,
             y: 30,
             duration: 1.2,
-            ease: "expo.out"
+            ease: "expo.out",
           });
         });
 
-        // Terminal lines reveal
-        gsap.from(".term-line", {
+        // Skills Grid Reveal
+        gsap.from(".skill-card", {
           scrollTrigger: {
-            trigger: ".terminal-wrapper",
-            start: "top 80%",
+            trigger: ".skills-grid",
+            start: "top 85%",
           },
           opacity: 0,
-          y: 5,
-          stagger: 0.15,
-          duration: 0.1,
-          ease: "none"
+          y: 40,
+          stagger: 0.1,
+          duration: 1,
+          ease: "back.out(1.5)",
         });
 
         // Project reveal
-        document.querySelectorAll('.proj').forEach(proj => {
-          const mask = proj.querySelector('.proj-mask');
-          const img = proj.querySelector('.proj-img');
-          const info = proj.querySelector('.proj-info');
-          
-          gsap.timeline({
-            scrollTrigger: {
-              trigger: proj,
-              start: "top 85%",
-            }
-          })
-          .fromTo(proj, { opacity: 0, y: 50, skewY: 2 }, { opacity: 1, y: 0, skewY: 0, duration: 1.2, ease: "expo.out" })
-          .to(mask, { scaleX: 0, duration: 1.5, ease: "expo.inOut" }, "-=1.0");
+        document.querySelectorAll(".proj").forEach((proj) => {
+          const mask = proj.querySelector(".proj-mask");
+          const img = proj.querySelector(".proj-img");
+          const info = proj.querySelector(".proj-info");
+
+          gsap
+            .timeline({
+              scrollTrigger: {
+                trigger: proj,
+                start: "top 85%",
+              },
+            })
+            .fromTo(
+              proj,
+              { opacity: 0, y: 50, skewY: 2 },
+              { opacity: 1, y: 0, skewY: 0, duration: 1.2, ease: "expo.out" },
+            )
+            .to(
+              mask,
+              { scaleX: 0, duration: 1.5, ease: "expo.inOut" },
+              "-=1.0",
+            );
         });
 
         // History items
-        const historyCols = document.querySelectorAll('.hist-col');
-        historyCols.forEach(col => {
-          const line = col.querySelector('.hist-line-grow');
-          const dots = col.querySelectorAll('.hist-dot');
-          const items = col.querySelectorAll('.hist-item');
+        const historyCols = document.querySelectorAll(".hist-col");
+        historyCols.forEach((col) => {
+          const line = col.querySelector(".hist-line-grow");
+          const dots = col.querySelectorAll(".hist-dot");
+          const items = col.querySelectorAll(".hist-item");
 
           const tl = gsap.timeline({
             scrollTrigger: {
               trigger: col,
               start: "top 75%",
-            }
+            },
           });
 
           tl.to(line, { height: "100%", duration: 1.5, ease: "power2.inOut" });
 
           items.forEach((item, i) => {
-            tl.fromTo(dots[i], { scale: 0 }, { scale: 1, duration: 0.4, ease: "back.out(2)" }, "-=1.2");
-            tl.fromTo(item, { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.6, ease: "power2.out" }, "-=1.0");
+            tl.fromTo(
+              dots[i],
+              { scale: 0 },
+              { scale: 1, duration: 0.4, ease: "back.out(2)" },
+              "-=1.2",
+            );
+            tl.fromTo(
+              item,
+              { opacity: 0, x: -20 },
+              { opacity: 1, x: 0, duration: 0.6, ease: "power2.out" },
+              "-=1.0",
+            );
           });
         });
 
         // Scramble main section titles
-        document.querySelectorAll('.sec-title').forEach(title => {
+        document.querySelectorAll(".sec-title").forEach((title) => {
           ScrollTrigger.create({
             trigger: title,
             start: "top 85%",
-            onEnter: () => scrambleText(title)
+            onEnter: () => scrambleText(title),
           });
         });
       }
 
       // Initialize after a short delay to ensure layout is ready
-      if (document.readyState === 'loading') {
-        window.addEventListener('DOMContentLoaded', initReveals);
+      if (document.readyState === "loading") {
+        window.addEventListener("DOMContentLoaded", initReveals);
       } else {
         initReveals();
       }
@@ -2722,10 +2989,13 @@
         const originalText = el.innerText;
         let iteration = 0;
         const interval = setInterval(() => {
-          el.innerText = originalText.split("").map((char, index) => {
-            if (index < iteration) return originalText[index];
-            return chars[Math.floor(Math.random() * chars.length)];
-          }).join("");
+          el.innerText = originalText
+            .split("")
+            .map((char, index) => {
+              if (index < iteration) return originalText[index];
+              return chars[Math.floor(Math.random() * chars.length)];
+            })
+            .join("");
           if (iteration >= originalText.length) clearInterval(interval);
           iteration += 1 / 3;
         }, 30);
@@ -2807,57 +3077,75 @@
       // ══════════════════════════════════════════════════
       //  PROJECT ACCORDION (Click to Toggle)
       // ══════════════════════════════════════════════════
-      document.querySelectorAll('.d1-item').forEach(item => {
-        item.addEventListener('click', () => {
-          const isActive = item.classList.contains('active');
-          document.querySelectorAll('.d1-item').forEach(i => i.classList.remove('active'));
-          if (!isActive) item.classList.add('active');
+      document.querySelectorAll(".d1-item").forEach((item) => {
+        item.addEventListener("click", () => {
+          const isActive = item.classList.contains("active");
+          document
+            .querySelectorAll(".d1-item")
+            .forEach((i) => i.classList.remove("active"));
+          if (!isActive) item.classList.add("active");
         });
       });
 
       // ══════════════════════════════════════════════════
       //  LOADER ANIMATION
       // ══════════════════════════════════════════════════
-      window.addEventListener('load', () => {
+      window.addEventListener("load", () => {
         const tl = gsap.timeline();
-        
+
         tl.to(".loader-main-text", {
           y: 0,
           duration: 1.2,
-          ease: "expo.out"
+          ease: "expo.out",
         })
-        .to(".loader-sub-text", {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          ease: "expo.out"
-        }, "-=0.8")
-        .to(".loader-progress-bar", {
-          width: "100%",
-          duration: 2,
-          ease: "power4.inOut"
-        }, "-=1")
-        .to(".loader-content, .loader-bg-text", {
-          opacity: 0,
-          scale: 0.9,
-          duration: 0.8,
-          ease: "expo.in"
-        })
-        .to("#loader", {
-          y: "-100%",
-          duration: 1,
-          ease: "expo.inOut"
-        }, "-=0.2")
-        .call(() => {
-          document.body.classList.remove('loading');
-        })
-        .from("#hero .hero-content > *, #cryptexWrapper", {
-          y: 50,
-          opacity: 0,
-          duration: 1,
-          stagger: 0.1,
-          ease: "expo.out"
-        }, "-=0.5");
+          .to(
+            ".loader-sub-text",
+            {
+              opacity: 1,
+              y: 0,
+              duration: 1,
+              ease: "expo.out",
+            },
+            "-=0.8",
+          )
+          .to(
+            ".loader-progress-bar",
+            {
+              width: "100%",
+              duration: 2,
+              ease: "power4.inOut",
+            },
+            "-=1",
+          )
+          .to(".loader-content, .loader-bg-text", {
+            opacity: 0,
+            scale: 0.9,
+            duration: 0.8,
+            ease: "expo.in",
+          })
+          .to(
+            "#loader",
+            {
+              y: "-100%",
+              duration: 1,
+              ease: "expo.inOut",
+            },
+            "-=0.2",
+          )
+          .call(() => {
+            document.body.classList.remove("loading");
+          })
+          .from(
+            "#hero .hero-content > *, #cryptexWrapper",
+            {
+              y: 50,
+              opacity: 0,
+              duration: 1,
+              stagger: 0.1,
+              ease: "expo.out",
+            },
+            "-=0.5",
+          );
       });
     </script>
   </body>
